@@ -18,7 +18,6 @@ modifier checkAllowanceAndBalance(uint256 _amount) {
     }
 
     function deposit(uint256 _amount) public checkAllowanceAndBalance(_amount) {
-
         IERC20(usdtAddress).transferFrom(msg.sender, address(this), _amount);
         pendingBalances[msg.sender] += _amount;
     }
